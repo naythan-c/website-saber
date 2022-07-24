@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saber</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav-wrapper">
+        <div class="left-side">
+          <div class="nav-link-wrapper">
+            <a href="index.html">Home</a>
+          </div>
+          <div class="nav-link-wrapper active-nav-link">
+            <a href="projects.html">Projects</a>
+          </div>
+        </div>
+
+        <div class="right-side">
+          <div class="brand">
+            <img src="images/logo.png" alt="" />
+          </div>
+        </div>
+    </div>
+
+    <div class="projects-content-wrapper">
+        <div class="two-column-wrapper">
+          <div class="project-image-wrapper">
+            <img src="images/project1.png" alt="">
+          </div>
+  
+          <div class="project-content-wrapper">
+            <a href="https://discord.gg/6BYEKKm" target="_blank">Saber Gaming</a>
+          </div>
+        </div>
+
+        <div class="two-column-wrapper">
+            <div class="project-image-wrapper">
+              <img src="images/project2.png" alt="">
+            </div>
+    
+            <div class="project-content-wrapper">
+                <a href="https://top.gg/bot/713181335623041076" target="_blank">Bibi</a>
+            </div>
+          </div>
+    </div>
+
+
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const toggleSwitch = document.querySelector(
+      '.theme-switch input[type="checkbox"]'
+    );
+    const currentTheme = localStorage.getItem("theme");
+
+    if (currentTheme) {
+      document.documentElement.setAttribute("data-theme", currentTheme);
+
+      if (currentTheme === "light") {
+        toggleSwitch.checked = true;
+      }
+    }
+
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+      }
+    }
+
+    toggleSwitch.addEventListener("change", switchTheme, false);
+  </script>
+</html>

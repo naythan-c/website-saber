@@ -1,0 +1,169 @@
+:root {
+  --primary-color: #d2e9ff;
+  --secondary-color: #6dd1ff;
+  --bg-color: #151f45;
+}
+
+[data-theme="light"] {
+  --primary-color: #151f45;
+  --secondary-color: #0456d7;
+  --bg-color: #d2e9ff;
+}
+
+/*Master Styles*/
+body {
+  font-family: "Overpass", sans-serif;
+  margin: 0px;
+  background-color: var(--bg-color);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/*Nav Styles*/
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.left-side {
+  display: flex;
+}
+
+.nav-wrapper > .left-side > div {
+  margin-right: 20px;
+  font-size: 1.4em;
+}
+
+.nav-link-wrapper {
+  height: 40px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.5s;
+}
+
+.nav-link-wrapper a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.nav-link-wrapper a:hover {
+  color: var(--secondary-color);
+}
+
+.active-nav-link {
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.active-nav-link a {
+  color: var(--primary-color) !important;
+}
+
+.brand img {
+  position: relative;
+  bottom: 30px;
+  width: auto;
+  height: 150px;
+}
+
+/*Content Styles*/
+
+/*Home*/
+.content-wrapper {
+  justify-content: center;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+/*Projects*/
+.projects-content-wrapper {
+  justify-content: center;
+  text-align: center;
+  color: var(--primary-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  bottom: 90px;
+
+}
+
+.project-image-wrapper img {
+  width: auto;
+  height: 200px;
+}
+
+
+.project-content-wrapper a{
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+
+.project-content-wrapper a:hover {
+  color: var(--secondary-color);
+}
+
+/*Switch Styles*/
+.theme-switch-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 90px;
+  padding-top: 140px;
+  padding-bottom: 30px;
+}
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #151f45;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
